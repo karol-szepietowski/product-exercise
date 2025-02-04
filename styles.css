@@ -1,0 +1,127 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* Main Section */
+main {
+    margin-top: 40px;
+}
+
+/* Intro Section */
+.intro {
+    background-color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #1a73e8;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.services h3 {
+    font-size: 1.8rem;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+.services ul {
+    list-style: none;
+}
+
+.services ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* CTA Section */
+.cta {
+    background-color: #1a73e8;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+}
+
+.cta h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.cta button {
+    background-color: #ffca28;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta button:hover {
+    background-color: #ffa000;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
