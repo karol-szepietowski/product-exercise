@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeLife Insurance</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="//api.beta.glia.com/salemove_integration.js"></script>
+    <script>
+        window.getGliaContext = function() {
+          function extractQueryParamValueFromString(paramName, urlString) {
+            var regex = new RegExp("[?|&]" + paramName + "=([^&]*)");
+            var executedRegex = urlString.match(regex);
+            return !executedRegex ? null : executedRegex[1];
+          }
+    
+          var queryParamName = "external_session_id";
+    
+          return {
+            sessionId: extractQueryParamValueFromString(queryParamName, window.location.href)
+          };
+        };
+      </script>
 </head>
 <body>
+    <script src="//api.beta.glia.com/salemove_integration.js"></script>
     <header>
         <div class="logo">
             <h1>SafeLife Insurance</h1>
