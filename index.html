@@ -9,20 +9,17 @@
 </head>
 <body>
     <script defer>
-        var signupbutton = document.querySelector('#signup');
-        var engagementRequest = salemove.requestEngagement('text');
+var engagementRequest = salemove.requestEngagement('text');
 
-        engagementRequest.engagementPromise.then(
-            function(engagement) {
-                var enableRecordEvent = function(engagement) {
-                    signupbutton.addEventListener('click', 
-                        function() {
-                            engagement.recordEvent({message: 'Thanks for sign up!'});
-                        }
-                    );
-                };
-            }
-        );
+engagementRequest.engagementPromise.then(function(engagement) {
+  var enableRecordEvent = function(engagement) {
+    var someButton = document.querySelector('#record-event-button');
+
+    someButton.addEventListener('click', function() {
+      engagement.recordEvent({message: 'Record visitor event'});
+    });
+  };
+});
     </script>
     <header>
         <div class="logo">
@@ -53,7 +50,7 @@
             <h3>Get a Quote Now</h3>
             <p>Enter your details below and get a personalized insurance quote in minutes.</p>
             <button id="buttonid">Get Started</button>
-            <button id="signup">Sign up!</button>
+            <button id="record-event-button">Sign up!</button>
         </section>
     </main>
 
