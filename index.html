@@ -8,19 +8,6 @@
     <script src="//api.beta.glia.com/salemove_integration.js"></script>
 </head>
 <body>
-    <script defer>
-var engagementRequest = salemove.requestEngagement('text');
-
-engagementRequest.engagementPromise.then(function(engagement) {
-  var enableRecordEvent = function(engagement) {
-    var someButton = document.querySelector('#record-event-button');
-
-    someButton.addEventListener('click', function() {
-      engagement.recordEvent({message: 'Record visitor event'});
-    });
-  };
-});
-    </script>
     <header>
         <div class="logo">
             <h1>SafeLife Insurance</h1>
@@ -58,5 +45,18 @@ engagementRequest.engagementPromise.then(function(engagement) {
         <p>&copy; 2025 SafeLife Insurance. All Rights Reserved.</p>
         <p>Page generated with the help of ChatGPT.</p>
     </footer>
+    <script>
+var engagementRequest = salemove.requestEngagement('text');
+
+engagementRequest.engagementPromise.then(function(engagement) {
+  var enableRecordEvent = function(engagement) {
+    var someButton = document.querySelector('#record-event-button');
+
+    someButton.addEventListener('click', function() {
+      engagement.recordEvent({message: 'Record visitor event'});
+    });
+  };
+});
+    </script>
 </body>
 </html>
