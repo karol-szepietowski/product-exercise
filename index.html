@@ -46,6 +46,7 @@
         <p>Page generated with the help of ChatGPT.</p>
     </footer>
     <script>
+  sm.getApi({version: 'v1'}).then(function(salemove) {
 var engagementRequest = salemove.requestEngagement('text');
 
 engagementRequest.engagementPromise.then(function(engagement) {
@@ -56,6 +57,7 @@ engagementRequest.engagementPromise.then(function(engagement) {
       engagement.recordEvent({message: 'Record visitor event'});
     });
   };
+});
 });
     </script>
 </body>
