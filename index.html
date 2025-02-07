@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeLife Insurance</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        window.getGliaContext = function() {
-          function extractQueryParamValueFromString(paramName, urlString) {
-            var regex = new RegExp("[?|&]" + paramName + "=([^&]*)");
-            var executedRegex = urlString.match(regex);
-            return !executedRegex ? null : executedRegex[1];
-          }
-    
-          var queryParamName = "external_session_id";
-    
-          return {
-            sessionId: extractQueryParamValueFromString(queryParamName, window.location.href)
-          };
-        };
-      </script>
+    <script src="//api.beta.glia.com/salemove_integration.js"></script>
 </head>
 <body>
-    <script src="//api.beta.glia.com/salemove_integration.js"></script>
+    <script defer>
+        var signupbutton = document.querySelector('#signup');
+        var engagementRequest = salemove.requestEngagement('text');
+
+        engagementRequest.engagementPromise.then(
+            function(engagement) {
+                var enableRecordEvent = function(engagement) {
+                    signupbutton.addEventListener('click', 
+                        function() {
+                            engagement.recordEvent({message: 'Record visitor event'});
+                        }
+                    );
+                };
+            }
+        );
+    </script>
     <header>
         <div class="logo">
             <h1>SafeLife Insurance</h1>
@@ -52,6 +53,7 @@
             <h3>Get a Quote Now</h3>
             <p>Enter your details below and get a personalized insurance quote in minutes.</p>
             <button id="buttonid">Get Started</button>
+            <button id="signup">Sign up!</button>
         </section>
     </main>
 
